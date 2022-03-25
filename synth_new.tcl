@@ -57,22 +57,22 @@ current_design $my_toplevel
 ###########################
 
 # to make DC not use the assign statement in its output netlist
-set verilogout_no_tri true
+# set verilogout_no_tri true
 
 # assume this means DC will ignore the case of the letters in net and module names
 #set verilogout_ignore_case true
 
 # unconnected nets will be marked by adding a prefix to its name
-set verilogout_unconnected_prefix "UNCONNECTED"
+# set verilogout_unconnected_prefix "UNCONNECTED"
 
 # show unconnected pins when creating module ports
-set verilogout_show_unconnected_pins true
+# set verilogout_show_unconnected_pins true
 
 # make sure that vectored ports don't get split up into single bits
-set verilogout_single_bit false
+# set verilogout_single_bit false
 
 # generate a netlist without creating an EDIF schematic
-set edifout_netlist_only true
+# set edifout_netlist_only true
 
 ########################
 # Define constraints
@@ -95,7 +95,7 @@ set CLK_SKEW [expr 0.025 * $CLK_PERIOD]
 # set_max_dynamic_power $MAX_DYNAMIC_POWER
 
 # make sure ports aren't connected together
-set_fix_multiple_port_nets -all
+# set_fix_multiple_port_nets -all
 
 # setting the port of clock
 create_clock -period  $CLK_PERIOD HCLK
@@ -167,6 +167,10 @@ compile
 
 # report design size and object counts
 report_area
+
+# report power
+report_power
+
 
 # reports design database constraints attributes
 # report_timing_requirements
