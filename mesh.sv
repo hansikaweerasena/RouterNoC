@@ -2,8 +2,8 @@ import noc_params::*;
 
 module mesh #(
     parameter BUFFER_SIZE = 8,
-    parameter MESH_SIZE_X = 2,
-    parameter MESH_SIZE_Y = 3
+    parameter MESH_SIZE_X = 4,
+    parameter MESH_SIZE_Y = 4
 )(
     input clk,
     input rst,
